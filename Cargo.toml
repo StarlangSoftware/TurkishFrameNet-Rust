@@ -1,10 +1,10 @@
 [package]
 name = "nlptoolkit-framenet"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 license = "	GPL-3.0-or-later"
 description = "Simple Turkish Framenet library"
 repository = "https://github.com/StarlangSoftware/TurkishFramenet-Rust"
 
 [dependencies]
-nlptoolkit-xmlparser = "0.0.6"
+nlptoolkit-xmlparser = "0.0.7"

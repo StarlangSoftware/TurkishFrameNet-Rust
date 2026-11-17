@@ -1,5 +1,5 @@
 use crate::frame::Frame;
-use nlptoolkit_xmlparser::xmldocument::XmlDocument;
+use nlptoolkit_xmlparser::xml_document::XmlDocument;
 
 pub struct Framenet{
     frames: Vec<Frame>
@@ -89,7 +89,7 @@ impl Framenet{
 
 #[cfg(test)]
 mod tests {
-    use crate::framenet::Framenet;
+    use crate::frame_net::Framenet;
 
     #[test]
     fn test_frame_size() {

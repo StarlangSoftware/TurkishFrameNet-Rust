@@ -1,4 +1,4 @@
-use crate::frameelement::FrameElement;
+use crate::frame_element::FrameElement;
 
 pub struct FrameElementList {
     frame_elements: Vec<FrameElement>

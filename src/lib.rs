@@ -1,4 +1,4 @@
-pub mod frameelement;
+pub mod frame_element;
 pub mod frame;
-pub mod frameelementlist;
-pub mod framenet;
+pub mod frame_element_list;
+pub mod frame_net;

@@ -4,13 +4,13 @@ version = 4
 
 [[package]]
 name = "nlptoolkit-framenet"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "nlptoolkit-xmlparser",
 ]
 
 [[package]]
 name = "nlptoolkit-xmlparser"
-version = "0.0.6"
+version = "0.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "455c8f9ff14d3ff8864fec35f2410a2f8d35b390ba3d2fc75d4b3b5b30564609"
+checksum = "9ee51772094274d9bc04ca85fa007e17b12587244a161559fe23518beb9748e9"

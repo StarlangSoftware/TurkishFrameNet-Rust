@@ -88,7 +88,7 @@ impl FrameElement {
 
 #[cfg(test)]
 mod tests {
-    use crate::frameelement::FrameElement;
+    use crate::frame_element::FrameElement;
 
     #[test]
     fn test_frame_element() {
