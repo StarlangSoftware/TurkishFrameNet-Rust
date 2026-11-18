@@ -11,26 +11,26 @@ impl Framenet{
         let mut doc: XmlDocument = XmlDocument::new("framenet.xml".to_string());
         doc.parse();
         let framenet = doc.get_first_child().unwrap();
-        let mut frame_node_index = framenet.get_first_child();
-        while frame_node_index.is_some(){
-            let frame_node = doc.get_xml_element(frame_node_index.unwrap());
+        let mut current_outer = framenet.get_first_child();
+        while let Some(frame_node_index) = current_outer {
+            let frame_node = doc.get_xml_element(frame_node_index);
             let mut current_frame = Frame::new(frame_node.get_attribute_value("NAME".to_string()).unwrap().to_string());
             let lexical_units = doc.get_xml_element(frame_node.get_first_child().unwrap());
-            let mut lexical_unit_index = lexical_units.get_first_child();
-            while lexical_unit_index.is_some(){
-                let lexical_unit = doc.get_xml_element(lexical_unit_index.unwrap());
+            let mut current_inner1 = lexical_units.get_first_child();
+            while let Some(lexical_unit_index) = current_inner1 {
+                let lexical_unit = doc.get_xml_element(lexical_unit_index);
                 current_frame.add_lexical_unit(lexical_unit.get_pc_data().to_string());
-                lexical_unit_index = lexical_unit.get_next_sibling();
+                current_inner1 = lexical_unit.get_next_sibling();
             }
             let frame_elements = doc.get_xml_element(lexical_units.get_next_sibling().unwrap());
-            let mut frame_element_index = frame_elements.get_first_child();
-            while frame_element_index.is_some(){
-                let frame_element = doc.get_xml_element(frame_element_index.unwrap());
+            let mut current_inner2 = frame_elements.get_first_child();
+            while let Some(frame_element_index) = current_inner2 {
+                let frame_element = doc.get_xml_element(frame_element_index);
                 current_frame.add_frame_element(frame_element.get_pc_data().to_string());
-                frame_element_index = frame_element.get_next_sibling();
+                current_inner2 = frame_element.get_next_sibling();
             }
             frames.push(current_frame);
-            frame_node_index = frame_node.get_next_sibling();
+            current_outer = frame_node.get_next_sibling();
         }
         Self{frames}
     }
